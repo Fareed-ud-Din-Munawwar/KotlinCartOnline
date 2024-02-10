@@ -17,6 +17,8 @@ kotlin = "1.9.21"
 kotlinx-coroutines = "1.8.0-RC"
 ktor = "2.3.8"
 kamel = "0.8.3"
+firebase-kotlin = "1.11.1"
+google-service = "4.4.0"
 
 
 [libraries]
@@ -39,6 +41,7 @@ ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+firebase-auth = { module = "dev.gitlive:firebase-auth", version.ref = "firebase-kotlin"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -46,3 +49,4 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+googleService = { id = "com.google.gms.google-services", version.ref = "google-service" }
