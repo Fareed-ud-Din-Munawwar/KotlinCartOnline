@@ -7,7 +7,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.kotlinxSerialization)
-    alias(libs.plugins.googleService)
+    //alias(libs.plugins.googleService)
 }
 
 kotlin {
@@ -47,11 +47,6 @@ kotlin {
     sourceSets {
         val desktopMain by getting
 
-        androidMain.dependencies {
-            implementation(libs.compose.ui.tooling.preview)
-            implementation(libs.androidx.activity.compose)
-            implementation(libs.ktor.client.okhttp)
-        }
         val commonMain by getting {
             dependencies {
                 implementation(compose.runtime)
@@ -61,12 +56,28 @@ kotlin {
                 implementation(compose.ui)
                 @OptIn(ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
-                implementation(libs.ktor.client.core)
-                implementation(libs.ktor.serialization.kotlinx.json)
+
+                implementation(libs.bundles.ktor)
                 implementation(libs.ktor.client.content.negotiation)
+                implementation(libs.kotlin.serialization)
+                //  implementation(libs.kotlinx.coroutines.core)
+
                 implementation(libs.kamel)
                 implementation(libs.firebase.auth)
+
+                implementation(libs.decompose)
+                implementation(libs.decompose.jetbrains)
+
+                implementation(libs.koin.core)
             }
+        }
+
+        androidMain.dependencies {
+            implementation(libs.compose.ui.tooling.preview)
+            implementation(libs.androidx.activity.compose)
+            implementation(libs.koin.android)
+            implementation(libs.ktor.client.okhttp)
+            implementation(libs.ktor.client.android)
         }
         val androidUnitTest by getting
         val iosX64Main by getting
@@ -84,7 +95,7 @@ kotlin {
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
-            implementation(libs.ktor.client.okhttp)
+            implementation(libs.ktor.client.cio)
         }
     }
 }
