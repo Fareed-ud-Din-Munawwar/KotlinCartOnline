@@ -69,6 +69,7 @@ kotlin {
                 implementation(libs.decompose.jetbrains)
 
                 implementation(libs.koin.core)
+                implementation(libs.koin.compose)
             }
         }
 

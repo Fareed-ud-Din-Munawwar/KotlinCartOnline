@@ -14,12 +14,22 @@ class AllProductsComponent(
 ): ComponentContext by componentContext {
     
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
+
     private val _allProductsList = MutableStateFlow<List<Product>>(listOf())
     val allProductList = _allProductsList.asStateFlow()
+
+    private val _allCategories = MutableStateFlow<List<String>>(listOf())
+    val allCategories = _allCategories.asStateFlow()
     
     fun getAllProducts(){
         coroutineScope.launch {
-            _allProductsList.value = provider.getAllProducts().body()  
+            _allProductsList.value = provider.getAllProducts()
+        }
+    }
+
+    fun getAllCategories(){
+        coroutineScope.launch {
+            _allCategories.value = provider.getAllCategories()
         }
     }
 }

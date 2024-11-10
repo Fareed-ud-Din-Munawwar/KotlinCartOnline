@@ -26,7 +26,8 @@ class RootComponent(
         return when(config) {
             Configuration.AllProductsScreen -> Child.AllProductsScreen(
                 AllProductsComponent(
-                    componentContext = context, Provider()
+                    componentContext = context,
+                    provider = Provider()
                     
                 )
             )
