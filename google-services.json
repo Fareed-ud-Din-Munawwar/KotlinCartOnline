@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "827447406996",
+    "project_id": "kotlincartonline",
+    "storage_bucket": "kotlincartonline.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827447406996:android:080b114b9112a4af8ddf81",
+        "android_client_info": {
+          "package_name": "org.fareed.project.kotlincartonline.KotlinCartOnline"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiSk9s-SwjUknzBKAKOFHHKn6x6KYgOG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
